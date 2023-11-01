@@ -14,4 +14,6 @@ namespace mock2.Models
 
         public virtual DbSet<BloodDonor> BloodDonors{get;set;}
     }
+
+    
 }
