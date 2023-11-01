@@ -24,7 +24,7 @@ namespace p.Controllers
         // [Route("")]
         public IActionResult Index()
         {
-            var emp=db.Employees;
+            var emp=db.Employees.OrderBy(e=>e.EmployeeName);
             return View(emp);
         }
         [HttpGet]
