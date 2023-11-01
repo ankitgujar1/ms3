@@ -1,0 +1,16 @@
+@model IEnumerable<U.Models.Employee>
+
+<table class="table table-striped">
+
+    
+
+    @foreach(var i in Model){
+        <tr>
+        <td>@i.EmployeeId</td>
+        <td>@i.EmployeeName</td>
+        <td>@i.Salary</td>
+        <td><a asp-action="Edit" asp-route-id=@i.EmployeeId>Edit</a></td>
+        <td><a asp-action="Delete" asp-route-id=@i.EmployeeId>Delete</a></td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,46 @@
+@model v.Data.Employee
+<div class="row">
+    <div class="col-md-6">
+         <form asp-action="Create" asp-asp-controller="Employee" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeName" class="form-control">
+            </div>
+         </form>
+    </div>
+</div>
+
+
+@* 
+@model mvcefwithdb.Data.Employee
+<h1>Add Employee</h1>
+<hr> <br>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-controller="Employee" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeName" class="form-control">
+            </div> <br>
+            <div class="form-group">
+                <label asp-for="DepartmentId" class="control-label"></label>
+                <select asp-for="DepartmentId" asp-items="ViewBag.depList" class="form-control">
+                    <option>Select Department</option></select>
+            </div><br>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control">
+            </div><br>
+            <div class="form-group">
+                <label asp-for="JoinDate" class="control-label"></label>
+                <input asp-for="JoinDate" class="form-control">
+            </div><br>
+            <div class="form-group">
+                <input type="submit" value="Create Employee" class="btn btn-primary">
+            </div>
+           
+        </form>
+    </div>
+</div> *@

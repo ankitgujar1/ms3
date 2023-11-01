@@ -1,0 +1,49 @@
+@model mock2.Models.BloodDonor
+
+<form asp-action="Create" asp-controller="BloodDonor" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label><br>
+        <input asp-for="Name">
+    </div>
+<br>
+    <div class="form-group">
+        <label asp-for="DOB"></label><br>
+        <input asp-for="DOB">
+    </div>
+<br>
+    <div class="form-group">
+        <label asp-for="BloodGroup"></label><br>
+        <select asp-for="BloodGroup" class="form-select" as>
+            <option selected>Select Blood Group</option>
+            <option value="b+">B+</option>
+            <option value="o+">O+</option>
+            <option value="a-">A-</option>
+        </select>
+    </div>
+<br>
+    <div class="form-group">
+        <label asp-for="MobileNumber"></label><br>
+        <input asp-for="MobileNumber">
+    </div>
+<br>
+
+    <div class="form-group">
+        <label asp-for="Gender"></label><br>
+        <input asp-for="Gender">
+    </div>
+<br>
+    <div class="form-group">
+        <label asp-for="Email"></label><br>
+        <input asp-for="Email">
+    </div>
+<br>
+    <div class="form-group">
+        <label asp-for="Location"></label><br>
+        <input asp-for="Location">
+    </div>
+<br>
+    <div class="form-group">
+        <input type="submit" value="Create">
+    </div>
+</form>
+

@@ -1,0 +1,11 @@
+@model U.Models.Employee
+
+<form asp-action="Create" asp-controller="Employee" method="post">
+    <input asp-for="EmployeeName">
+    <br>
+    <input asp-for="Salary">
+    <br>
+    <input type="submit" value="create">
+    <br>
+
+</form>

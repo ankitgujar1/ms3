@@ -1,0 +1,20 @@
+  Determining projects to restore...
+  Writing /tmp/tmp7sIVrB.tmp
+info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/share/dotnet/sdk/6.0.414/trustedroots/codesignctl.pem'.
+info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/share/dotnet/sdk/6.0.414/trustedroots/timestampctl.pem'.
+info : Adding PackageReference for package 'Microsoft.EntityFrameworkCore' into project '/home/coder/project/workspace/mock2/mock2.csproj'.
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore/index.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore/index.json 171ms
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore/page/0.0.1-alpha/3.1.3.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore/page/0.0.1-alpha/3.1.3.json 34ms
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore/page/3.1.4/6.0.0-preview.7.21378.4.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore/page/3.1.4/6.0.0-preview.7.21378.4.json 18ms
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore/page/6.0.0-rc.1.21452.10/8.0.0-rc.2.23480.1.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/microsoft.entityframeworkcore/page/6.0.0-rc.1.21452.10/8.0.0-rc.2.23480.1.json 21ms
+info : Restoring packages for /home/coder/project/workspace/mock2/mock2.csproj...
+info : Package 'Microsoft.EntityFrameworkCore' is compatible with all the specified frameworks in project '/home/coder/project/workspace/mock2/mock2.csproj'.
+info : PackageReference for package 'Microsoft.EntityFrameworkCore' version '7.0.13' added to file '/home/coder/project/workspace/mock2/mock2.csproj'.
+info : Generating MSBuild file /home/coder/project/workspace/mock2/obj/mock2.csproj.nuget.g.props.
+info : Generating MSBuild file /home/coder/project/workspace/mock2/obj/mock2.csproj.nuget.g.targets.
+info : Writing assets file to disk. Path: /home/coder/project/workspace/mock2/obj/project.assets.json
+log  : Restored /home/coder/project/workspace/mock2/mock2.csproj (in 86 ms).

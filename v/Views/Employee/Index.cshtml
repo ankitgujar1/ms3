@@ -1,0 +1,19 @@
+@model IEnumerable<v.Data.Employee>
+
+<table class="table table-striped">
+    <tr>
+        <th>@Html.DisplayNameFor(model=>model.EmployeeId)</th>
+        <th>@Html.DisplayNameFor(model => model.EmployeeName)</th>
+        <th>@Html.DisplayNameFor(model => model.DId)</th>
+        <th>@Html.DisplayNameFor(model => model.Salay)</th>
+        <th>@Html.DisplayNameFor(model => model.JoinDate)</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>@i.EmployeeId</tr>
+        <tr>@i.EmployeeName</tr>
+        <tr>@i.DId</tr>
+        <tr>@i.Salay</tr>
+        <tr>@i.JoinDate</tr>
+    }
+</table>

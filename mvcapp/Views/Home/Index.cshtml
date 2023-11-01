@@ -1,0 +1,59 @@
+﻿@* below statement use to tightly bound class employee with model to reduce error like spelling mistaks, when single employee is recieved *@
+@* @model mvcapp.Models.Employee *@
+
+@* below statement use to tightly bound class employee with model to reduce error like spelling mistaks, when list/collection of employee is recieved *@
+@model IEnumerable<mvcapp.Models.Employee>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>LLLLLLLLLLLearn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<p>
+    Name1: @ViewData["name"]
+    Name2: @ViewBag.name2
+    Name3: @ViewBag.name3
+
+</p>
+
+@{
+    foreach (var i in @ViewBag.sidemen)
+    {
+        @i <br>
+    }
+}
+
+<br>
+
+@* Employee object e comes here as Model for single obj is received *@
+
+@* <div> 
+    <p>@Model.Id</p>
+    <p>@Model.Name</p>
+    <p>@Model.Salary</p>
+    <p>@Model.JoinDate</p>
+</div> *@
+
+@* Employee object collection/list e comes here as Model for multiple obj is received *@
+
+<table class="table table-striped">
+    @foreach (var i in Model)
+    {
+        <tr>
+        <td>@i.Id</td>
+        <td>@i.Name</td>
+        <td>@i.Salary</td>
+        <td>@i.JoinDate</td>
+        </tr>
+    }
+</table>
+
+
+<a href="~/home/content" class="btn btn-danger my-3">Content Result</a><br> @* this href calls the action *@
+<a href="~/home/redirect" class="btn btn-danger my-3">Redirect</a><br>
+<a href="~/home/Json" class="btn btn-danger my-3">Json</a><br>
+<a href="~/home/filedownload" class="btn btn-danger my-3">Download</a><br>

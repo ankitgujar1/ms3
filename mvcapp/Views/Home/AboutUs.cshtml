@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "About Us";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>My name is Ankit Gujar.</p>
+
+@* To write c# code in cshtml file use 
+@{
+
+} *@
+
+@{
+    var dt=DateTime.Now;
+    <p>Current Date time is @dt</p> //@ before var name
+}
+
+@{
+    int[] arr=new int[]{1,2,3,4,5,6};
+    @foreach (var i in arr)
+    {
+        <p class="fs-1">@i</p>
+    }
+}
+
+@{
+    int[] ar=new int[]{1,2,3,4,5,6};
+    foreach (var i in ar)
+    {
+        if(@i%2==1)
+        @i <br>
+    }
+}
+
+<a href="~/home/index">
+<img src="~/images/peakpx (1).jpg">
+</a>
+
+@* we can call action using ~/home/index or by adding /home/index to url *@
+
+<a href="~/home/index">Home</a> 
+
+
+
+

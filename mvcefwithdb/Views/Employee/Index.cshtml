@@ -1,0 +1,37 @@
+@model IEnumerable<mvcefwithdb.Data.Employee>
+ 
+    <h1>Employee Details</h1>
+    <p>No. of Employees : @ViewBag.count </p>
+    <p>Maximum Salary : @ViewBag.maxsalary</p>
+    <hr>
+<div class="d-grid gap-2 col-6 mx-auto">
+  <a class="btn btn-primary" asp-action="Create" >Add New Employees</a>
+</div>
+<hr> <br>
+    <table class="table table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.EmployeeId)</th>
+            <th>@Html.DisplayNameFor(model => model.EmployeeName)</th>
+            <th>@Html.DisplayNameFor(model => model.Department.DepartmentName)</th>
+            <th>@Html.DisplayNameFor(model => model.Salary)</th>
+            <th>@Html.DisplayNameFor(model => model.JoinDate)</th>
+            <th>Actions</th>
+        </tr>
+        <tbody>
+            @foreach(var i in Model)
+            {
+                <tr>
+                    <td>@i.EmployeeId</td>
+                    <td>@i.EmployeeName</td>
+                    <td>@i.Department.DepartmentName</td>
+                    <td>@i.Salary</td>
+                    <td>@i.JoinDate</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id=@i.EmployeeId class="btn btn-primary btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id=@i.EmployeeId class="btn btn-danger btn-sm">Delete</a>
+                        <a asp-action="Details" asp-route-id=@i.EmployeeId class="btn btn-success btn-sm">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

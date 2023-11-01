@@ -1,0 +1,7 @@
+@model p.Models.Employee
+
+<form asp-action="Edit" asp-controller="Employee" method="post">
+    <input asp-for="EmployeeId" class="form-control" readonly>
+    <input asp-for="EmployeeName">
+    <input type="submit" value="create">
+</form>

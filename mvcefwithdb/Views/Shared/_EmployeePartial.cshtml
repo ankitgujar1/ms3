@@ -1,0 +1,16 @@
+@* @model IEnumerable<mvcefwithdb.Data.Employee> *@
+
+<table class="table table-striped">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+    </tr>
+
+    @foreach(var i in @ViewBag.empList){
+        <tr>
+            <td>@i.EmployeeId</td>
+        <td>@i.EmployeeName</td>
+
+        </tr>
+    }
+</table>

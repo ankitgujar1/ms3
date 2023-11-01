@@ -1,0 +1,26 @@
+@model mvcefc.Models.Employee
+ 
+<form method="post" action="/Employee/Create">
+<label>Employee Id</label><br />
+<input type="text" asp-for="EmployeeId"/>
+<br /><br />
+<label>Employee Name</label><br />
+<input type="text" asp-for="EmployeeName"/>
+<br /><br />
+<label>Department ID</label><br />
+<select asp-for="DepartmentId" asp-items="ViewBag.Data">
+    </select>
+<br /><br />
+<label>Salary</label><br />
+<input type="text" asp-for="Salary"/>
+<br /><br />
+<label>Join Date</label><br />
+<input  asp-for="JoinDate"/>
+<br /><br />
+<label>Is Regular?</label><br />
+<input  asp-for="IsRegular"/>
+<br /><br />
+<input type="submit" value="Send Data"/>
+<br />
+@ViewBag.message
+</form>
