@@ -59,10 +59,12 @@ namespace mock2.Controllers
         public IActionResult Index()
         {
             // var bd=db.BloodDonors.OrderBy(e=>e.Name);
-            var bd=db.BloodDonors.OrderBy(e=>e.Name);
+            var bd=db.BloodDonors.OrderBy(e=>e.Name).ToList();
             ViewBag.sum=db.BloodDonors.Sum(e=>e.ID);
-            ViewBag.count=db.BloodDonors.Count(e=>e);
+            ViewBag.count=db.BloodDonors.Count();
             ViewBag.max=db.BloodDonors.Max(e=>e.ID);
+            var i=db.BloodDonors.FirstOrDefault(e=>e.Name=="ankit");
+            if(i!=null) ViewBag.name=i;
             return View(bd);
         }
 
