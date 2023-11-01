@@ -58,7 +58,11 @@ namespace mock2.Controllers
         }
         public IActionResult Index()
         {
-            var bd=db.BloodDonors;
+            // var bd=db.BloodDonors.OrderBy(e=>e.Name);
+            var bd=db.BloodDonors.OrderBy(e=>e.Name);
+            ViewBag.sum=db.BloodDonors.Sum(e=>e.ID);
+            ViewBag.count=db.BloodDonors.Count(e=>e);
+            ViewBag.max=db.BloodDonors.Max(e=>e.ID);
             return View(bd);
         }
 

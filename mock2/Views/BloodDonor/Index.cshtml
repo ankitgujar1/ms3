@@ -1,5 +1,7 @@
 @model IEnumerable<mock2.Models.BloodDonor>
-
+<p>@ViewBag.sum</p>
+<p>@ViewBag.count</p>
+<p>@ViewBag.max</p>
 <table class="table table-striped">
     <tr>
         <th>@Html.DisplayNameFor(model=>model.Name)</th>
@@ -15,6 +17,7 @@
     @foreach (var i in Model)
     {
         <tr>
+            <td>@i.ID</td>
             <td>@i.Name</td>
             <td>@i.DOB</td>
             <td>@i.Gender</td>
