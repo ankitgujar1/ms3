@@ -24,7 +24,7 @@ namespace p.Controllers
         // [Route("")]
         public IActionResult Index()
         {
-            var emp=db.Employees.OrderBy(e=>e.EmployeeName);
+            var emp=db.Employees.FirstOrDefault(e=>e.EmployeeName.StartsWith("A"));
             return View(emp);
         }
         [HttpGet]
