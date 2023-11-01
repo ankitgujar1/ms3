@@ -6,10 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<MockDbContext>(options=>{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("conStr"));
-});
+// builder.Services.AddDbContext<MockDbContext>(options=>{
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("conStr"));
+// });
 
+builder.Services.AddDbContext<
 
 var app = builder.Build();
 
