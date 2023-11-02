@@ -58,7 +58,7 @@ namespace mock2.Controllers
             return View();
         }
 
-        
+
 
         [HttpPost]
         public IActionResult Create(BloodDonor bd){
@@ -69,7 +69,9 @@ namespace mock2.Controllers
 
         public IActionResult Delete(int id){
             var e=db.BloodDonors.Find(id);
-            return View(e);
+            if(e!=null) return View(e);
+            else return NotFound();
+            
         }
 
         [HttpPost]
