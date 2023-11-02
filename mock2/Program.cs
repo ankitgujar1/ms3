@@ -10,6 +10,10 @@ builder.Services.AddControllersWithViews();
 //     options.UseSqlServer(builder.Configuration.GetConnectionString("conStr"));
 // });
 
+// builder.Services.AddDbContext<MockDbContext>(options=>{
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("conStr"));
+// });
+
 builder.Services.AddDbContext<MockDbContext>(options=>{
     options.UseSqlServer(builder.Configuration.GetConnectionString("conStr"));
 });

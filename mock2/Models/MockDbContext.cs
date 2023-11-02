@@ -12,6 +12,8 @@ namespace mock2.Models
 
         }
 
+        public MockDbContext(DbContextOptions<MockDbContext> options):base
+
         public virtual DbSet<BloodDonor> BloodDonors{get;set;}
     }
 
