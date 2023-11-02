@@ -8,11 +8,13 @@ namespace mock2.Models
 {
     public class MockDbContext:DbContext
     {
+        // public MockDbContext(DbContextOptions<MockDbContext> options):base(options){
+
+        // }
+
         public MockDbContext(DbContextOptions<MockDbContext> options):base(options){
 
         }
-
-        public MockDbContext(DbContextOptions<MockDbContext> options):base
 
         public virtual DbSet<BloodDonor> BloodDonors{get;set;}
     }
