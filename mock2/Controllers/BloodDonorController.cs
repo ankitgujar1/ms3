@@ -20,38 +20,10 @@ namespace mock2.Controllers
         //     this.db=db;
         // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private MockDbContext db;
         public BloodDonorController(MockDbContext db){
             this.db=db;
         }
-
-
-
 
         [HttpGet]
         public IActionResult Create(){
