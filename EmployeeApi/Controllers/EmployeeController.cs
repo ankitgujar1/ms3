@@ -41,5 +41,25 @@ namespace EmployeeApi.Controllers
         public void Post(Employee e){
             l.Add(e);
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public void Delete(int id){
+            var e=l.FirstOrDefault(i=>i.EmployeeId==id);
+            if(e!=null) l.Remove(e);
+
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public void Put(int id,Employee emp){
+            var e=l.FirstOrDefault(i=>i.EmployeeId==id);
+            e.EmployeeId=emp.EmployeeId;
+            e.EmployeeName=emp.EmployeeName;
+            e.Salary=emp.Salary;
+            // if(e!=null) l.Remove(e);
+
+
+        }
     }
 }
