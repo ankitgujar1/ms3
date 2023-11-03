@@ -30,5 +30,14 @@ namespace EmployeeApi.Controllers
             db.SaveChanges();
             return Ok();
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete(int id){
+            var dp=db.Departments.FirstOrDefault(i=>i.DepartmentId==id);
+            if(dp!=null){
+                
+            }
+        }
     }
 }
