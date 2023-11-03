@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EmployeeApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeApi.Controllers
 {
@@ -16,13 +17,17 @@ namespace EmployeeApi.Controllers
         public DepartmentApiController(ApiDbContext db){
             this.db=db;
         }
+
+        [HttpGet]
         public IActionResult Get(){
-            var dp=db.Departments;
-            return Ok(dp);
+            // var dp=db.Departments;
+            return Ok(db.Departments);
         }
 
+        [HttpPost]
         public IActionResult Post(Department d){
             db.Departments.Add(d);
+            db.SaveChanges();
             return Ok();
         }
     }
