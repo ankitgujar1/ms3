@@ -7,18 +7,31 @@ using EmployeeApi.Models;
 
 namespace EmployeeApi.Controllers
 {
+
+   
     [ApiController]
     [Route("api/[controller]")]
     public class EmployeeController : ControllerBase
     {
 
         //methods name can only be Get, Post, 
+         private List<Employee> l = new List<Employee>{
+            new Employee{EmployeeId=1,EmployeeName="ankit",Salary=234},
+            new Employee{EmployeeId=2,EmployeeName="mustafa",Salary=98765},
+            new Employee{EmployeeId=3,EmployeeName="pooja",Salary=5678},
+            new Employee{EmployeeId=4,EmployeeName="kimaya",Salary=7632}
 
-        private List<Employee> l=new List<Employee>{
-            new Employee{EmployeeId=1}
         };
-        public IEnumerable<Employee> Get(){
 
+        public IEnumerable<Employee> Get()
+        {
+            return l;
+        }
+
+        [Route("{id}")]
+        public Employee Get(int id){
+            var e=l.FirstOrDefault(i=>i.EmployeeId==id);
+            return e;
         }
     }
 }
