@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EmployeeApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+// using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeApi.Controllers
 {
@@ -20,8 +20,8 @@ namespace EmployeeApi.Controllers
 
         [HttpGet]
         public IActionResult Get(){
-            // var dp=db.Designations;
-            return Ok(db.Designations);
+            var dp=db.Designations;
+            return Ok(dp);
         }
 
         [HttpPost]

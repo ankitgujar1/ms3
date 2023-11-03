@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EmployeeApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+// using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeApi.Controllers
 {
@@ -21,8 +21,16 @@ namespace EmployeeApi.Controllers
 
         [HttpGet]
         public IActionResult Get(){
-            // var e=db.Employees;
-            return Ok(db.Employees);
+            var e=db.Employees;
+            return Ok(e);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get(int id){
+            var e=db.Employees.FirstOrDefault(i=>i.EmployeeId==id);
+            if(e!=null) return Ok(e);
+            else return NotFound();
         }
 
         [HttpPost]
