@@ -33,6 +33,7 @@ namespace EmployeeApi.Controllers
         [Route("{id}")]
         public Employee Get(int id){
             var e=l.FirstOrDefault(i=>i.EmployeeId==id);
+            if(e!=null)
             return e;
         }
 
@@ -57,7 +58,6 @@ namespace EmployeeApi.Controllers
             e.EmployeeId=emp.EmployeeId;
             e.EmployeeName=emp.EmployeeName;
             e.Salary=emp.Salary;
-            // if(e!=null) l.Remove(e);
 
 
         }
