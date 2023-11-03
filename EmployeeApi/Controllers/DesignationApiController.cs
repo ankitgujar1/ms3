@@ -38,7 +38,7 @@ namespace EmployeeApi.Controllers
         public IActionResult Post(Designation d){
             db.Designations.Add(d);
             db.SaveChanges();
-            return Ok();
+            return Created("Get",d);
         }
 
         [HttpDelete]
@@ -54,10 +54,15 @@ namespace EmployeeApi.Controllers
         }
 
         [HttpPut]
+        // [Route("{id}")]
         public IActionResult Put(int id,Designation d){
+            var ds=db.Designations.Find(id);
+            if(ds!=null){
                db.Update(d); 
                db.SaveChanges();
                return Ok();
+            }
+            else return NotFound();
         }
 
         

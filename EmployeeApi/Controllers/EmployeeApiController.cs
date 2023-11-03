@@ -37,7 +37,7 @@ namespace EmployeeApi.Controllers
         public IActionResult Post(Employee emp){
             db.Employees.Add(emp);
             db.SaveChanges();
-            return Ok();
+            return Created("Get",emp);
         }
 
         [HttpDelete]
@@ -45,7 +45,7 @@ namespace EmployeeApi.Controllers
         public IActionResult Delete(int id){
             var dp=db.Employees.FirstOrDefault(i=>i.EmployeeId==id);
             if(dp!=null){
-               db.Designations.Remove(dp); 
+               db.Employees.Remove(dp); 
                db.SaveChanges();
                return Ok();
             } 
@@ -53,8 +53,8 @@ namespace EmployeeApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put(int id,Designation d){
-               db.Update(d); 
+        public IActionResult Put(int id,Employee e){
+               db.Update(e); 
                db.SaveChanges();
                return Ok();
         }

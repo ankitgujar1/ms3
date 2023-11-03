@@ -38,7 +38,7 @@ namespace EmployeeApi.Controllers
         public IActionResult Post(Department d){
             db.Departments.Add(d);
             db.SaveChanges();
-            return Ok();
+            return Created("Get",d);
         }
 
         [HttpDelete]
