@@ -9,12 +9,12 @@ namespace EmployeeApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class EmpApiController : ControllerBase
+    public class EmployeeApiController : ControllerBase
     {
     
         private ApiDbContext db;
 
-        public EmpApiController(ApiDbContext db){
+        public EmployeeApiController(ApiDbContext db){
             this.db=db;
         }
 
@@ -26,8 +26,9 @@ namespace EmployeeApi.Controllers
 
         [HttpPost]
         public IActionResult Post(Employee emp){
-            var e=db.Employees.Add(emp);
-            return Ok(e);
+            db.Employees.Add(emp);
+            db.SaveChanges();
+            return Ok();
         }
     }
 }
