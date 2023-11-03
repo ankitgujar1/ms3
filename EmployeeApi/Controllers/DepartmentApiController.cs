@@ -24,6 +24,16 @@ namespace EmployeeApi.Controllers
             return Ok(dp);
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get(int id){
+            var dp=db.Departments.FirstOrDefault(i=>i.DepartmentId==id);
+            if(dp!=null){
+               return Ok(dp);
+            } 
+            else return NotFound();
+        }
+
         [HttpPost]
         public IActionResult Post(Department d){
             db.Departments.Add(d);
@@ -36,8 +46,23 @@ namespace EmployeeApi.Controllers
         public IActionResult Delete(int id){
             var dp=db.Departments.FirstOrDefault(i=>i.DepartmentId==id);
             if(dp!=null){
-                
-            }
+               db.Departments.Remove(dp); 
+               db.SaveChanges();
+               return Ok();
+            } 
+            else return NotFound();
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult Put(int id,Department d){
+            var dp=db.Departments.FirstOrDefault(i=>i.DepartmentId==id);
+            if(dp!=null){
+               db.Update(d); 
+               db.SaveChanges();
+               return Ok();
+            } 
+            else return NotFound();
         }
     }
 }
