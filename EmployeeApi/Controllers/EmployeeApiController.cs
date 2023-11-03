@@ -34,8 +34,9 @@ namespace EmployeeApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Employee emp){
-            db.Employees.Add(emp);
+        public IActionResult Post(Employee e)
+        {
+            db.Employees.Add(e);
             db.SaveChanges();
             return Ok();
         }
