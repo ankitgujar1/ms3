@@ -24,40 +24,54 @@ namespace EmployeeApi.Controllers
         };
 
         [HttpGet]
-        public IEnumerable<Employee> Get()
+        public IActionResult Get()
         {
-            return l;
+            return Ok(l);
         }
 
         [HttpGet]
         [Route("{id}")]
-        public Employee Get(int id){
+        public IActionResult Get(int id){
             var e=l.FirstOrDefault(i=>i.EmployeeId==id);
-            if(e!=null)
-            return e;
+            if(e!=null) return Ok(e);
+            else return NotFound();
         }
 
 
         [HttpPost]
-        public void Post(Employee e){
-            l.Add(e);
+        public IActionResult Post(Employee e){
+            if(e!=null){
+                l.Add(e);
+                return Ok();
+            }
+            return NotFound();
+            
         }
 
         [HttpDelete]
         [Route("{id}")]
-        public void Delete(int id){
+        public IActionResult Delete(int id){
             var e=l.FirstOrDefault(i=>i.EmployeeId==id);
-            if(e!=null) l.Remove(e);
+            if(e!=null){
+               l.Remove(e); 
+               return Ok();
+            } 
+            else return NotFound();
 
         }
 
         [HttpPut]
         [Route("{id}")]
-        public void Put(int id,Employee emp){
+        public IActionResult Put(int id,Employee emp){
             var e=l.FirstOrDefault(i=>i.EmployeeId==id);
-            e.EmployeeId=emp.EmployeeId;
-            e.EmployeeName=emp.EmployeeName;
-            e.Salary=emp.Salary;
+            if(e!=null){
+                e.EmployeeId=emp.EmployeeId;
+                e.EmployeeName=emp.EmployeeName;
+                e.Salary=emp.Salary;
+                return Ok();
+            }
+            else return NotFound();
+            
 
 
         }
