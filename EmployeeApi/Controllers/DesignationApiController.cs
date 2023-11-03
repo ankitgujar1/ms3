@@ -24,11 +24,42 @@ namespace EmployeeApi.Controllers
             return Ok(dp);
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get(int id){
+            var dp=db.Designations.FirstOrDefault(i=>i.DesignationId==id);
+            if(dp!=null){
+               return Ok(dp);
+            } 
+            else return NotFound();
+        }
+
         [HttpPost]
         public IActionResult Post(Designation d){
             db.Designations.Add(d);
             db.SaveChanges();
             return Ok();
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete(int id){
+            var dp=db.Designations.FirstOrDefault(i=>i.DesignationId==id);
+            if(dp!=null){
+               db.Designations.Remove(dp); 
+               db.SaveChanges();
+               return Ok();
+            } 
+            else return NotFound();
+        }
+
+        [HttpPut]
+        public IActionResult Put(int id,Designation d){
+               db.Update(d); 
+               db.SaveChanges();
+               return Ok();
+        }
+
+        
     }
 }

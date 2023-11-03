@@ -39,5 +39,24 @@ namespace EmployeeApi.Controllers
             db.SaveChanges();
             return Ok();
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete(int id){
+            var dp=db.Employees.FirstOrDefault(i=>i.EmployeeId==id);
+            if(dp!=null){
+               db.Designations.Remove(dp); 
+               db.SaveChanges();
+               return Ok();
+            } 
+            else return NotFound();
+        }
+
+        [HttpPut]
+        public IActionResult Put(int id,Designation d){
+               db.Update(d); 
+               db.SaveChanges();
+               return Ok();
+        }
     }
 }

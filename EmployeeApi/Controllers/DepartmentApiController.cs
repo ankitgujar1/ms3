@@ -54,15 +54,10 @@ namespace EmployeeApi.Controllers
         }
 
         [HttpPut]
-        [Route("{id}")]
         public IActionResult Put(int id,Department d){
-            var dp=db.Departments.FirstOrDefault(i=>i.DepartmentId==id);
-            if(dp!=null){
                db.Update(d); 
                db.SaveChanges();
                return Ok();
-            } 
-            else return NotFound();
         }
     }
 }
