@@ -8,6 +8,7 @@ namespace EmployeeApi.Models
     public class Designation
     {
         public int DesignationId{get;set;}
-        public string EmployeeName{get;set;}
+        public string? DesignationName{get;set;}
+        public virtual ICollection<Employee>? Employees{get;set;}
     }
 }
