@@ -15,7 +15,7 @@ namespace EmployeeApi.Controllers
         //methods name can only be Get, Post, 
 
         private List<Employee> l=new List<Employee>{
-            new Employee{EmployeeId}
+            new Employee{EmployeeId=1}
         };
         public IEnumerable<Employee> Get(){
 
