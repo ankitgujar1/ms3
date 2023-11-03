@@ -23,15 +23,23 @@ namespace EmployeeApi.Controllers
 
         };
 
+        [HttpGet]
         public IEnumerable<Employee> Get()
         {
             return l;
         }
 
+        [HttpGet]
         [Route("{id}")]
         public Employee Get(int id){
             var e=l.FirstOrDefault(i=>i.EmployeeId==id);
             return e;
+        }
+
+
+        [HttpPost]
+        public void Post(Employee e){
+            l.Add(e);
         }
     }
 }
