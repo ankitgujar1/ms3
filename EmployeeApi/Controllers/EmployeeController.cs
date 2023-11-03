@@ -15,7 +15,7 @@ namespace EmployeeApi.Controllers
     {
 
         //methods name can only be Get, Post, 
-         private List<Employee> l = new List<Employee>{
+         private static List<Employee> l = new List<Employee>{
             new Employee{EmployeeId=1,EmployeeName="ankit",Salary=234},
             new Employee{EmployeeId=2,EmployeeName="mustafa",Salary=98765},
             new Employee{EmployeeId=3,EmployeeName="pooja",Salary=5678},
