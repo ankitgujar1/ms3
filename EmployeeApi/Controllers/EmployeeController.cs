@@ -40,11 +40,9 @@ namespace EmployeeApi.Controllers
 
         [HttpPost]
         public IActionResult Post(Employee e){
-            if(e!=null){
                 l.Add(e);
                 return Ok();
-            }
-            return NotFound();
+            // return NotFound();
             
         }
 
