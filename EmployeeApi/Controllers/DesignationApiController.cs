@@ -56,13 +56,14 @@ namespace EmployeeApi.Controllers
         [HttpPut]
         // [Route("{id}")]
         public IActionResult Put(int id,Designation d){
-            var ds=db.Designations.Find(id);
-            if(ds!=null){
+            // var ds=db.Designations.Find(id);
+            // if(ds!=null){
                db.Update(d); 
                db.SaveChanges();
+            //    db.Dispose();
                return Ok();
-            }
-            else return NotFound();
+            // }
+            // else return NotFound();
         }
 
         
