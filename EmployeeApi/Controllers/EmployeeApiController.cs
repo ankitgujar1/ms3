@@ -62,10 +62,23 @@ namespace EmployeeApi.Controllers
 
         //route - no need to specify action name url in case of api
         [HttpGet]
-        [Route("{uname}/{pword}")]
+        [Route("user/{uname}/{pword}")]
         public string ValidateUser(string uname,string pword){
             if(uname==pword) return "Valid User";
             return "Not Valid";
+        }
+
+        [HttpGet]
+        [Route("admin/{uname}/{pword}")]
+        public string ValidateAdmin(string uname,string pword){
+            if(uname==pword) return "Valid User";
+            return "Not Valid";
+        }
+
+        [HttpGet]
+        [Route("add/{n}/{m}")]
+        public int Add(int n,int m){
+            return n+m;
         }
     }
 }
