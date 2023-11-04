@@ -12,6 +12,10 @@ namespace EmpApi.Repository
     {
         private EmpApiDbContext db;
 
+        public EmployeeRepository(){
+            
+        }
+
         public EmployeeRepository(EmpApiDbContext db){
             this.db=db;
         }
