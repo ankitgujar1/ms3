@@ -59,5 +59,13 @@ namespace EmployeeApi.Controllers
                db.SaveChanges();
                return Ok();
         }
+
+        //route - no need to specify action name url in case of api
+        [HttpGet]
+        [Route("{uname}/{pword}")]
+        public string ValidateUser(string uname,string pword){
+            if(uname==pword) return "Valid User";
+            return "Not Valid";
+        }
     }
 }
