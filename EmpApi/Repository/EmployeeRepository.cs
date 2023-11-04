@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EmpApi.Models;
+using EmpApi.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmpApi.Repository
 {
@@ -23,7 +25,7 @@ namespace EmpApi.Repository
         public Employee FindEmp(int id){
             var e=db.Employees.Find(id);
             if(e!=null) return e;
-            return Nullable;
+            return null;
         }
 
         public Employee DeleteEmp(int id){
@@ -44,6 +46,19 @@ namespace EmpApi.Repository
                 return e;
             }
             return null;
+        }
+
+        public List<EmployeeDTO> GetAllEmp(){
+            var empList=db.Employees.Include("Department")
+            .Select(e=>new EmployeeDTO{
+                EmployeeId=e.EmployeeId,
+                EmployeeName=e.EmployeeName,
+                DepartmentName=e.Department.DepartmentName,
+                Salary=e.Salary
+                // JoinDate=e.JoinDate
+            }).ToList();
+
+            return empList;
         }
     }
 }

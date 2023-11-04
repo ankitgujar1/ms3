@@ -15,6 +15,6 @@ namespace EmpApi.DTOs
         public string DepartmentName{get;set;}
         // public int DesignationId{get;set;}
 
-        public virtual Department? Department{get;set;}
+        // public virtual Department? Department{get;set;}
     }
 }
