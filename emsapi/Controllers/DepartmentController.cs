@@ -25,6 +25,34 @@ namespace emsapi.Controllers
             var data = repo.GetDepartments();
             return Ok(data);
         }
+
+        [HttpPost]
+        [Route("AddDept")]
+        public IActionResult Post(Department d){
+            repo.AddDept(d);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("EditDept/{id}")]
+        public IActionResult Put(Department d){
+            repo.EditDept(d);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("DeleteDept/{id}")]
+        public IActionResult Delete(int id){
+            repo.DeleteDept(id);
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("FindDept/{id}")]
+        public IActionResult Get(int id){
+            repo.FindDept(id);
+            return Ok();
+        }
         
     }
 }
