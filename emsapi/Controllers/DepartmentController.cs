@@ -50,8 +50,8 @@ namespace emsapi.Controllers
         [HttpGet]
         [Route("FindDept/{id}")]
         public IActionResult Get(int id){
-            repo.FindDept(id);
-            return Ok();
+            // repo.FindDept(id);
+            return Ok(repo.FindDept(id));
         }
         
     }
