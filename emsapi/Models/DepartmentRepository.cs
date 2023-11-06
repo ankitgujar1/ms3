@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using emsapi.Models;
  
-namespace EmpApi.Models
+namespace emsapi.Models
 {
     public class DepartmentRepository : IDepartment
     {
