@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "dVLX+OkOSBBJRGqSB+DJNyqfFUfPJMD4i3JI2EChlP4=",
+  "Source": "emsapi",
+  "BasePath": "_content/emsapi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
