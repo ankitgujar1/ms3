@@ -25,7 +25,7 @@ builder.Services.AddAuthentication(x=>{
         ValidateAudience=false,
         ValidateLifetime=true,
         ValidateIssuerSigningKey=true,
-        ValidIssuers=con["JWT:Issuer"],
+        ValidIssuer=con["JWT:Issuer"],
         ValidAudience=con["JWT:Audience"],
         IssuerSigningKey=new SymmetricSecurityKey(key)
     };
