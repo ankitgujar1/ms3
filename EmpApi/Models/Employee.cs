@@ -7,15 +7,12 @@ namespace EmpApi.Models
 {
     public class Employee
     {
-        public int EmployeeId{get;set;}
-        public string? EmployeeName{get;set;}
-        public double Salary{get;set;}
-
-        public int DepartmentId{get;set;}
-        // public int DesignationId{get;set;}
-
-        public virtual Department? Department{get;set;}
-
-        // public virtual Designation? Designation{get;set;}
+        public int EmployeeId { get; set; }
+        public string EmployeeName { get; set; }
+        public decimal Salary { get; set; }
+       
+        public int DepartmentId { get; set; }
+        // public   DateTime JoinDate { get; set; }
+        public virtual Department Department {set; get;}
     }
 }

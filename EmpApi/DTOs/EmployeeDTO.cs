@@ -13,6 +13,6 @@ namespace EmpApi.DTOs
         public string DepartmentName { get; set; }
         public decimal Salary { get; set; }
        
-        public   DateTime JoinDate { get; set; }
+        // public   DateTime JoinDate { get; set; }
     }
 }

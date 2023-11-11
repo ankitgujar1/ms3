@@ -37,7 +37,8 @@ namespace EmpApi.Controllers
         public IActionResult Post(Employee newemp)
         {
             var emp = repo.AddEmployee(newemp);
-            return CreatedAtAction ("Get" , new {id = emp.EmployeeId} , emp);
+            // return CreatedAtAction ("Get" , new {id = emp.EmployeeId} , emp);
+            return Ok(emp);
  
         }
  

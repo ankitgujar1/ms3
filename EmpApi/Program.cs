@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using EmpApi.Models;
 using EmpApi.Repository;
+using log4net.Config;
+using log4net;
 
 var builder = WebApplication.CreateBuilder(args);
  

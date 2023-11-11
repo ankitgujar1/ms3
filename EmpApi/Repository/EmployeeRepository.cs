@@ -46,8 +46,8 @@ namespace EmpApi.Repository
                    EmployeeId =  e.EmployeeId,
                    EmployeeName = e.EmployeeName,
                     DepartmentName = e.Department.DepartmentName,
-                    Salary = e.Salary,
-                    JoinDate =  e.JoinDate
+                    Salary = (decimal)e.Salary,
+                    // JoinDate =  e.JoinDate
                 }).ToList();
  
             return empList;

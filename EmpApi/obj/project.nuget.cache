@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "uXgc/MvtTrH8JXirRsYXnuJs9oUShE3UQ2n4WZhhqaQphMN4xnI2+DMfD+5WQ+8cjO/+oRcO9pT4XcRX7KSTpg==",
+  "dgSpecHash": "ZpyU/OskJp1niM1qzfgSFbH0fd4+jQQyiCb7oX0A0LdkguvHpKCjbjsw5tk4YmleSZiViEKhZRJWWHuJCciWNg==",
   "success": true,
   "projectFilePath": "/home/coder/project/workspace/EmpApi/EmpApi.csproj",
   "expectedPackageFiles": [
     "/home/coder/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/home/coder/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
     "/home/coder/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/coder/.nuget/packages/log4net/2.0.15/log4net.2.0.15.nupkg.sha512",
     "/home/coder/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/home/coder/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/home/coder/.nuget/packages/microsoft.data.sqlclient/5.1.1/microsoft.data.sqlclient.5.1.1.nupkg.sha512",

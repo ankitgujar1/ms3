@@ -80,3 +80,4 @@
 /home/coder/project/workspace/EmpApi/obj/Debug/net6.0/EmpApi.pdb
 /home/coder/project/workspace/EmpApi/obj/Debug/net6.0/EmpApi.genruntimeconfig.cache
 /home/coder/project/workspace/EmpApi/obj/Debug/net6.0/ref/EmpApi.dll
+/home/coder/project/workspace/EmpApi/bin/Debug/net6.0/log4net.dll
