@@ -84,42 +84,42 @@ namespace EmployeeApi.Controllers
             return n+m;
         }
 
-        [HttpPost]
-        [Route("auth")]
-        public string AuthenticateEmployee(User data)
-        {
-            string token = "";
-            if(data.Username == "username" && data.Password == "password")
-            {
-                token = TokenGenerator(data);
-            }
-            return token;
-        }
+        // [HttpPost]
+        // [Route("auth")]
+        // public string AuthenticateEmployee(User data)
+        // {
+        //     string token = "";
+        //     if(data.Username == "username" && data.Password == "password")
+        //     {
+        //         token = TokenGenerator(data);
+        //     }
+        //     return token;
+        // }
  
-        public string TokenGenerator(User data)
-        {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_con["JWT:Key"]));
-            var credentials = new SigningCredentials(securityKey , SecurityAlgorithms.HmacSha256);
+        // public string TokenGenerator(User data)
+        // {
+        //     var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_con["JWT:Key"]));
+        //     var credentials = new SigningCredentials(securityKey , SecurityAlgorithms.HmacSha256);
  
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.Name , data.Username),
-                new Claim(ClaimTypes.Role , "hero"),
-                // new Claim(ClaimTypes.Role , "Admin")
+        //     var claims = new[]
+        //     {
+        //         new Claim(ClaimTypes.Name , data.Username),
+        //         new Claim(ClaimTypes.Role , "hero"),
+        //         // new Claim(ClaimTypes.Role , "Admin")
  
-            };
+        //     };
  
-            var token = new JwtSecurityToken(_con["JWT:Issuer"] ,
-            _con["JWT:Audience"] ,
-            claims ,
-            expires: DateTime.Now.AddHours(2),
-            signingCredentials: credentials
-            );
+        //     var token = new JwtSecurityToken(_con["JWT:Issuer"] ,
+        //     _con["JWT:Audience"] ,
+        //     claims ,
+        //     expires: DateTime.Now.AddHours(2),
+        //     signingCredentials: credentials
+        //     );
  
-            string finalToken = new JwtSecurityTokenHandler().WriteToken(token);
+        //     string finalToken = new JwtSecurityTokenHandler().WriteToken(token);
  
-            return finalToken;
-        }
+        //     return finalToken;
+        // }
  
     }
 }
