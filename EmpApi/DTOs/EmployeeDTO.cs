@@ -12,7 +12,7 @@ namespace EmpApi.DTOs
         public string? EmployeeName{get;set;}
         public double Salary{get;set;}
 
-        public string DepartmentName{get;set;}
+        public string? DepartmentName{get;set;}
         // public int DesignationId{get;set;}
 
         // public virtual Department? Department{get;set;}
