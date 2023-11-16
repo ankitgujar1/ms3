@@ -16,20 +16,26 @@ builder.Services.AddDbContext<ApiDbContext>(options=>{
 
 IConfiguration con=builder.Configuration;
 builder.Services.AddControllers();
-builder.Services.AddAuthentication(x=>{
-    x.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(token=>{
-    var key=Encoding.UTF8.GetBytes(con["JWT:Key"]);
-    token.TokenValidationParameters=new TokenValidationParameters{
-        ValidateIssuer=false,
-        ValidateAudience=false,
-        ValidateLifetime=true,
-        ValidateIssuerSigningKey=true,
-        ValidIssuer=con["JWT:Issuer"],
-        ValidAudience=con["JWT:Audience"],
-        IssuerSigningKey=new SymmetricSecurityKey(key)
-    };
-});
+ services.AddAuthentication(x =>
+            {
+                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(o =>
+            {
+                var key = Encoding.UTF8.GetBytes(Configuration["JWT:Key"]);
+                o.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["JWT:Issuer"],
+                    ValidAudience = Configuration["JWT:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                };
+
+
+            });
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
