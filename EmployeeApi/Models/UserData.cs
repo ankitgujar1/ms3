@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace EmployeeApi.Models
 {
-    public class User
+    public class UserData
     {
-        public string? Username{get;set;}
-        public string? Password{get;set;}
+        public string Username {set; get;}
+        public string Password {set; get;}
     }
 }
