@@ -13,5 +13,9 @@ namespace wprac.Models
         public decimal Salary {get;set;}
         [DataType(DataType.Date)]
         public DateTime JoinDate {get;set;}
+
+        public int DepartmentId{get;set;}
+
+        public virtual Department? Department{get;set;}
     }
 }
