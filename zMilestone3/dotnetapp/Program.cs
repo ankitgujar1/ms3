@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
-using SportsAcademyJobHiring.Data;
+// using SportsAcademyJobHiring.Data;
+using dotnetapp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
