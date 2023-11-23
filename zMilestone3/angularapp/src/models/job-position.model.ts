@@ -9,6 +9,6 @@ export interface JobPosition{
     qualifications:string
     applicationDeadline:Date;
     isClosed:boolean;
-    applications?:JobApplication
+    applications?:JobApplication[]
 }
 
