@@ -43,10 +43,20 @@ export class JobService {
     return this.http.post<JobPosition>("https://8080-abbcbfeabdfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Job/position/add",jobPositionData,{headers:header});
   }
 
-  applyForJob(webApplicationData:JobApplication):Observable<JobApplication>{
+  applyForJob(jobApplicationData:JobApplication):Observable<JobApplication>{
     let header:HttpHeaders=new HttpHeaders({
       Accept:"application/json"
     })
+
+    return this.http.post<JobApplication>("https://8080-abbcbfeabdfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Job/application/add",jobApplicationData,{headers:header})
+  }
+
+  updateApplicationStatus(applicationId:number,applicantName:string,newStatus:string){
+    let header:HttpHeaders=new HttpHeaders({
+      Accept:"application/json"
+    })
+
+    this.http.put("",applicationId,applicantName,newStatus,{headers:})
   }
 
 
