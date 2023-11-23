@@ -35,5 +35,19 @@ export class JobService {
     return this.http.get<JobPosition[]>("https://8080-abbcbfeabdfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Job/position_title",{headers:header});
   }
 
+  createJopPosition(jobPositionData:JobPosition):Observable<JobPosition>{
+    let header:HttpHeaders=new HttpHeaders({
+      Accept:"application/json"
+    })
+
+    return this.http.post<JobPosition>("https://8080-abbcbfeabdfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Job/position/add",jobPositionData,{headers:header});
+  }
+
+  applyForJob(webApplicationData:JobApplication):Observable<JobApplication>{
+    let header:HttpHeaders=new HttpHeaders({
+      Accept:"application/json"
+    })
+  }
+
 
 }
