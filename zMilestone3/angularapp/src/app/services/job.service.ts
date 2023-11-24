@@ -51,10 +51,15 @@ export class JobService {
     return this.http.post<JobApplication>("https://8080-abbcbfeabdfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/api/Job/application/add",jobApplicationData,{headers:header})
   }
 
-  updateApplicationStatus(applicationId:number,data:any):Observable<JobApplication>{
+  updateApplicationStatus(applicationId:number,appName:string,newStatus:string):Observable<JobApplication>{
     let header:HttpHeaders=new HttpHeaders({
       Accept:"application/json"
     })
+   let data:object={
+    Id:applicationId,
+    applicantName:appName,
+    status:newStatus
+    }
 
     return this.http.put<JobApplication>(""+applicationId,data,{headers:header})
   }
